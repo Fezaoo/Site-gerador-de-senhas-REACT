@@ -51,19 +51,22 @@ function App() {
                 <input type='range' className='senha_tamanho' min={4} max={25} step={1}></input>
               </div>
               <div className='senha_caracteres_container'>
-                <label className='label'>Incluir</label>
+                <label className='label'>Incluir:</label>
                 <div className='checkbox_container'>
                   <div className='checkbox_option'>
-                    <input type='checkbox'></input>
-                    <label className='label_checkbox'>Maiúsculas</label>
+                    <label className='label_checkbox'>
+                    <input type='checkbox' className='checkbox'/> Maiúsculas
+                    </label>
                   </div>
                   <div className='checkbox_option'>
-                    <input type='checkbox'></input>
-                    <label className='label_checkbox'>Minúsculas</label>
+                    <label className='label_checkbox'>
+                    <input type='checkbox' className='checkbox'/> Minúsculas
+                    </label>
                   </div>
                   <div className='checkbox_option'>
-                    <input type='checkbox'></input>
-                    <label className='label_checkbox'>Símbolos</label>
+                    <label className='label_checkbox'>
+                    <input type='checkbox' className='checkbox'/> Símbolos
+                    </label>
                   </div>
                 </div>
               </div>

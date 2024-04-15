@@ -119,12 +119,36 @@
   display: flex;
   margin-inline: 20px;
   flex-direction: column;
+  text-align: center;
 }
 .checkbox_container{
   display: flex;
   flex-direction: column;
+  margin-top: 15px;
 }
-.checkbox{
+.checkbox_option{
   display: flex;
   flex-direction: row;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+.label_checkbox{
+  display: flex;
+  cursor: pointer;
+}
+.checkbox{
+  
+  margin-inline: 5px;
+  width: 20px;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid rgb(100, 100, 100);
+}
+.checkbox:checked{
+  background-color: red;
+}
+.checkbox::before{
+  
+  clip-path: polygon(12% 49%, 0 65%, 50% 100%, 100% 16%, 83% 0, 41% 70%);
+  color: white;
 }
