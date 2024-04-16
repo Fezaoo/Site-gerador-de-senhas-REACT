@@ -134,6 +134,7 @@
 }
 .label_checkbox{
   display: flex;
+  position: relative;
   cursor: pointer;
 }
 .checkbox{
@@ -145,10 +146,17 @@
   border: 2px solid rgb(100, 100, 100);
 }
 .checkbox:checked{
-  background-color: red;
+  background-color: rgb(48, 145, 255);
 }
-.checkbox::before{
-  
-  clip-path: polygon(12% 49%, 0 65%, 50% 100%, 100% 16%, 83% 0, 41% 70%);
+.checkbox:hover{
+  border-color: rgb(116, 181, 255);
+}
+.check_icon{
+  display: none;
+  position: absolute;
+  left: 10px;
+}
+.checkbox:checked ~ .check_icon{
+  display: inline;
   color: white;
 }

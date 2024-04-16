@@ -1,8 +1,29 @@
 import './App.css';
 import { MdOutlineContentCopy } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
+import { FaCheck } from "react-icons/fa";
+import { useState } from 'react';
 
 function App() {
+  const [Tamanho, setTamanho] = useState(4)
+  const [Maiusculas, setMaiusculas] = useState(false)
+  const minusculas = document.getElementsByClassName('minusculas')
+  const simbolos = document.getElementsByClassName('simbolos')
+  function gerar_senha(){
+    const letras_maiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const letras_minusculas = 'abcdefghijklmnopqrstuvwxyz'
+    const simbolos = '!@#$%&?'
+    const incluir = '0123456789'
+    const senha = ''
+    if (Maiusculas) {
+      incluir += letras_maiusculas 
+    }
+    for (let c in Tamanho) {
+        senha += Math.floor(Math.random() * incluir.length)
+    }
+    return senha
+  }
+
   return (
     <div className="App">
       <header className='header'>
@@ -24,7 +45,7 @@ function App() {
           <section className='senha_section'>
             <div className='senha_container'>
               <div className='senha'>
-                <p>pSdoaASDASDAASDASDASDASDASDASDDds</p>
+                <p>{gerar_senha()}</p>
               </div>
               <div className='senha_interacao'>
                 <button className='senha_interacao_botao'>
@@ -47,25 +68,37 @@ function App() {
             </h2>
             <div className='config'>
               <div className='senha_tamanho_container'>
-                <label className='label'>Tamanho: </label>
-                <input type='range' className='senha_tamanho' min={4} max={25} step={1}></input>
+                <label className='label'>Tamanho: {Tamanho}</label>
+                <input type='range' className='senha_tamanho' min={4} max={25} step={1} value={Tamanho} onChange={(e) => setTamanho(e.target.value)}></input>
               </div>
               <div className='senha_caracteres_container'>
                 <label className='label'>Incluir:</label>
                 <div className='checkbox_container'>
                   <div className='checkbox_option'>
                     <label className='label_checkbox'>
-                    <input type='checkbox' className='checkbox'/> Maiúsculas
+                      <input type='checkbox' className='checkbox maiusculas' /> 
+                      <span className='check_icon'>
+                        <FaCheck size={11} />
+                      </span>
+                      Maiúsculas
                     </label>
                   </div>
                   <div className='checkbox_option'>
                     <label className='label_checkbox'>
-                    <input type='checkbox' className='checkbox'/> Minúsculas
+                      <input type='checkbox' className='checkbox minusculas' />
+                      <span className='check_icon'>
+                        <FaCheck size={11} />
+                      </span>
+                       Minúsculas
                     </label>
                   </div>
                   <div className='checkbox_option'>
                     <label className='label_checkbox'>
-                    <input type='checkbox' className='checkbox'/> Símbolos
+                      <input type='checkbox' className='checkbox simbolos' />
+                      <span className='check_icon'>
+                        <FaCheck size={11} />
+                      </span>
+                      Símbolos
                     </label>
                   </div>
                 </div>
