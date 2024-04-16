@@ -147,6 +147,7 @@
 }
 .checkbox:checked{
   background-color: rgb(48, 145, 255);
+  border-color: rgb(48, 145, 255);
 }
 .checkbox:hover{
   border-color: rgb(116, 181, 255);
