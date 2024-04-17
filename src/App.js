@@ -3,6 +3,10 @@ import { MdOutlineContentCopy } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 import { FaCheck } from "react-icons/fa";
 import { useState, useEffect } from 'react';
+import { MdDarkMode } from "react-icons/md";
+import { BsFillSunFill } from "react-icons/bs";
+import { FaCircle } from "react-icons/fa";
+
 
 function App() {
   const [Tamanho, setTamanho] = useState(4);
@@ -12,12 +16,23 @@ function App() {
   const [Senha, setSenha] = useState('');
   const [Status_bar, setStatus_bar] = useState('25%')
   const [Display, setDisplay] = useState(false)
+  const [DarkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    console.log('funcionou sabomba')
+    if (DarkMode) {
+      import('./dark_theme.css');
+    } else {
+      
+    }
+  }, [DarkMode]);
+
 
   useEffect(() => {
     setSenha(gerar_senha());
     largura_status_bar()
   }, [Tamanho, Maiusculas, Minusculas, Simbolos]);
-  
+
   function gerar_senha() {
     const letras_maiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     const letras_minusculas = 'abcdefghijklmnopqrstuvwxyz'
@@ -35,10 +50,10 @@ function App() {
   }
 
   function largura_status_bar() {
-    if (Tamanho>=20 && Maiusculas && Minusculas && Simbolos) {
+    if (Tamanho >= 20 && Maiusculas && Minusculas && Simbolos) {
       setStatus_bar('100%')
     }
-    else if (Tamanho>=12 && (Maiusculas || Minusculas) ) {
+    else if (Tamanho >= 12 && (Maiusculas || Minusculas)) {
       setStatus_bar('75%')
     }
     else if (Tamanho >= 7 && Senha.length < 12 && (!Maiusculas || !Minusculas)) {
@@ -59,16 +74,31 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className={DarkMode ? "App ":"App"}>
       <div className='container_content'>
         <section className='content'>
-          
+
           <header className='header'>
             <div className='header_element'>
-              <div className='titulo_container'>
-                <h1 className='titulo'>
-                  Gerador de Senhas
-                </h1>
+              <div className='header_title_theme'>
+                <div className='titulo_theme_container'>
+                  <div className='language_container'>
+                    <select className='language'>
+                      <option>Portugues</option>
+                      <option>Inglês</option>
+                    </select>
+                  </div>
+                  <h1 className='titulo'>
+                    Gerador de Senhas
+                  </h1>
+
+                    <div onClick={(e) => {DarkMode ? setDarkMode(false) : setDarkMode(true)}} className='theme_icons '>
+                      <FaCircle className='seletor '/>
+                      <BsFillSunFill />
+                      <MdDarkMode />
+                    </div>
+    
+                </div>
               </div>
               <div className='descricao'>
                 <p>
@@ -78,7 +108,7 @@ function App() {
             </div>
           </header>
           <main className='corpo_container'>
-          <hr></hr>
+            <hr></hr>
             <section className='corpo'>
               <section className='senha_section'>
                 <div className='senha_container'>
@@ -107,14 +137,14 @@ function App() {
                 <div className='config'>
                   <div className='senha_tamanho_container'>
                     <label className='label'>Tamanho: {Tamanho}</label>
-                    <input type='range' className='senha_tamanho' min={4} max={25} step={1} value={Tamanho} onChange={(e) =>  setTamanho(e.target.value) }></input>
+                    <input type='range' className='senha_tamanho' min={4} max={25} step={1} value={Tamanho} onChange={(e) => setTamanho(e.target.value)}></input>
                   </div>
                   <div className='senha_caracteres_container'>
                     <label className='label'>Incluir:</label>
                     <div className='checkbox_container'>
                       <div className='checkbox_option'>
                         <label className='label_checkbox'>
-                          <input type='checkbox' className='checkbox maiusculas' checked={Maiusculas} onChange={(e) =>  setMaiusculas(e.target.checked)} />
+                          <input type='checkbox' className='checkbox maiusculas' checked={Maiusculas} onChange={(e) => setMaiusculas(e.target.checked)} />
                           <span className='check_icon'>
                             <FaCheck size={11} />
                           </span>
@@ -132,7 +162,7 @@ function App() {
                       </div>
                       <div className='checkbox_option'>
                         <label className='label_checkbox'>
-                          <input type='checkbox' className='checkbox simbolos' checked={Simbolos} onChange={(e) =>  setSimbolos(e.target.checked)} />
+                          <input type='checkbox' className='checkbox simbolos' checked={Simbolos} onChange={(e) => setSimbolos(e.target.checked)} />
                           <span className='check_icon'>
                             <FaCheck size={11} />
                           </span>
@@ -143,7 +173,7 @@ function App() {
                   </div>
                 </div>
                 <div className='show_container'>
-                    <div className={`show_copy ${Display ? 'show_copy_visivel' : ''}`}><h3>Copiado</h3></div>
+                  <div className={`show_copy ${Display ? 'show_copy_visivel' : ''}`}><h3>Copiado</h3></div>
                 </div>
               </section>
             </section>

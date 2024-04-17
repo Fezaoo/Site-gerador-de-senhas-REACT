@@ -1,0 +1,98 @@
+.App {
+    background-color: #0d1117;
+    color: white;
+}
+
+.content {
+    box-shadow: 1px 1px 3px rgb(56, 56, 56);
+    background-color: rgb(26, 25, 36);
+}
+
+.header {
+    background-color: rgb(26, 25, 36);
+}
+select{
+    color: white;
+  }
+.theme_icons {
+    background-color: #283247;
+}
+
+.seletor {
+    position: absolute;
+    justify-self: left;
+    color: rgb(231, 231, 231);
+    width: 30px;
+    height: 30px;
+    transform: translate(-33px);
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+hr {
+    background-color: rgb(211, 211, 211);
+}
+
+.corpo {
+    background-color: rgb(26, 25, 36);
+
+}
+.senha_interacao_botao{
+    color: white;
+}
+.senha_interacao_botao:hover {
+    color: rgb(48, 145, 255);
+}
+
+.status_bar_externo {
+    background-color: rgb(59, 59, 59);
+}
+
+.status_bar_interno {
+    background-color: green;
+}
+
+.label {
+    color: rgb(170, 170, 170);
+}
+
+/* */
+
+.senha_tamanho::-webkit-slider-runnable-track {
+
+    background-color: rgb(58, 58, 58);
+
+}
+
+.senha_tamanho::-webkit-slider-thumb {
+    background-color: aqua;
+    box-shadow: 1px 1px 4px rgb(110, 110, 110);
+}
+
+.senha_tamanho:active::-webkit-slider-thumb,
+.senha_tamanho:hover::-webkit-slider-thumb {
+    border: 1px solid rgb(163, 163, 163);
+}
+
+/* */
+.checkbox {
+    border: 2px solid rgb(100, 100, 100);
+}
+
+.checkbox:checked {
+    background-color: rgb(48, 145, 255);
+    border-color: rgb(48, 145, 255);
+}
+
+.checkbox:hover {
+    border-color: rgb(116, 181, 255);
+}
+
+.checkbox:checked~.check_icon {
+    color: white;
+}
+
+.show_copy {
+    background-color: #909090;
+    color: white;
+}
