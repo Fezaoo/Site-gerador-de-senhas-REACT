@@ -1,98 +1,96 @@
-.App {
+#dark {
     background-color: #0d1117;
     color: white;
 }
 
-.content {
+#dark .content {
     box-shadow: 1px 1px 3px rgb(56, 56, 56);
     background-color: rgb(26, 25, 36);
 }
 
-.header {
+#dark .header {
     background-color: rgb(26, 25, 36);
 }
-select{
+
+#dark select{
     color: white;
-  }
-.theme_icons {
+}
+
+#dark .theme_icons {
     background-color: #283247;
 }
 
-.seletor {
+#dark .seletor {
     position: absolute;
     justify-self: left;
     color: rgb(231, 231, 231);
     width: 30px;
     height: 30px;
-    transform: translate(-33px);
+    transform: translate(-5px);
     border-radius: 50%;
     border: 1px solid black;
 }
 
-hr {
+#dark hr {
     background-color: rgb(211, 211, 211);
 }
 
-.corpo {
+#dark .corpo {
     background-color: rgb(26, 25, 36);
-
 }
-.senha_interacao_botao{
+
+#dark .senha_interacao_botao{
     color: white;
 }
-.senha_interacao_botao:hover {
+
+#dark .senha_interacao_botao:hover {
     color: rgb(48, 145, 255);
 }
 
-.status_bar_externo {
+#dark .status_bar_externo {
     background-color: rgb(59, 59, 59);
 }
 
-.status_bar_interno {
-    background-color: green;
+#dark .status_bar_interno {
+    background-color: rgb(0, 131, 102);
 }
 
-.label {
+#dark .label {
     color: rgb(170, 170, 170);
 }
 
-/* */
-
-.senha_tamanho::-webkit-slider-runnable-track {
-
+#dark .senha_tamanho::-webkit-slider-runnable-track {
     background-color: rgb(58, 58, 58);
-
 }
 
-.senha_tamanho::-webkit-slider-thumb {
+#dark .senha_tamanho::-webkit-slider-thumb {
     background-color: aqua;
     box-shadow: 1px 1px 4px rgb(110, 110, 110);
 }
 
-.senha_tamanho:active::-webkit-slider-thumb,
-.senha_tamanho:hover::-webkit-slider-thumb {
+#dark .senha_tamanho:active::-webkit-slider-thumb,
+#dark .senha_tamanho:hover::-webkit-slider-thumb {
     border: 1px solid rgb(163, 163, 163);
 }
 
-/* */
-.checkbox {
+#dark .checkbox {
     border: 2px solid rgb(100, 100, 100);
 }
 
-.checkbox:checked {
+#dark .checkbox:checked {
     background-color: rgb(48, 145, 255);
     border-color: rgb(48, 145, 255);
 }
 
-.checkbox:hover {
+#dark .checkbox:hover {
     border-color: rgb(116, 181, 255);
 }
 
-.checkbox:checked~.check_icon {
+#dark .checkbox:checked~.check_icon {
     color: white;
 }
 
-.show_copy {
+#dark .show_copy {
     background-color: #909090;
     color: white;
 }

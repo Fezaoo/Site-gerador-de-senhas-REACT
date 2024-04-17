@@ -1,4 +1,6 @@
 import './App.css';
+import './dark_theme.css';
+import './light.theme.css'
 import { MdOutlineContentCopy } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 import { FaCheck } from "react-icons/fa";
@@ -6,7 +8,8 @@ import { useState, useEffect } from 'react';
 import { MdDarkMode } from "react-icons/md";
 import { BsFillSunFill } from "react-icons/bs";
 import { FaCircle } from "react-icons/fa";
-
+import { createContext } from 'react';
+const ThemeContext = createContext(null) 
 
 function App() {
   const [Tamanho, setTamanho] = useState(4);
@@ -16,16 +19,9 @@ function App() {
   const [Senha, setSenha] = useState('');
   const [Status_bar, setStatus_bar] = useState('25%')
   const [Display, setDisplay] = useState(false)
-  const [DarkMode, setDarkMode] = useState(false)
+  const [Theme, setTheme] = useState('light')
 
-  useEffect(() => {
-    console.log('funcionou sabomba')
-    if (DarkMode) {
-      import('./dark_theme.css');
-    } else {
-      
-    }
-  }, [DarkMode]);
+
 
 
   useEffect(() => {
@@ -56,7 +52,7 @@ function App() {
     else if (Tamanho >= 12 && (Maiusculas || Minusculas)) {
       setStatus_bar('75%')
     }
-    else if (Tamanho >= 7 && Senha.length < 12 && (!Maiusculas || !Minusculas)) {
+    else if (Tamanho >= 7 && (!Maiusculas || !Minusculas)) {
       setStatus_bar('50%')
     }
     else if (Tamanho <= 6) {
@@ -72,12 +68,15 @@ function App() {
     }, 2000);
   }
 
+  const toggle_theme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"))
+  }
 
   return (
-    <div className={DarkMode ? "App ":"App"}>
+    <ThemeContext.Provider value={{Theme, toggle_theme}}>
+    <div className="App" id={Theme}>
       <div className='container_content'>
         <section className='content'>
-
           <header className='header'>
             <div className='header_element'>
               <div className='header_title_theme'>
@@ -92,7 +91,7 @@ function App() {
                     Gerador de Senhas
                   </h1>
 
-                    <div onClick={(e) => {DarkMode ? setDarkMode(false) : setDarkMode(true)}} className='theme_icons '>
+                    <div onClick={toggle_theme} className='theme_icons '>
                       <FaCircle className='seletor '/>
                       <BsFillSunFill />
                       <MdDarkMode />
@@ -181,6 +180,7 @@ function App() {
         </section>
       </div>
     </div>
+    </ThemeContext.Provider>
   );
 }
 

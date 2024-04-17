@@ -1,0 +1,94 @@
+#light {
+    background-color: rgb(236, 236, 236);
+    color: black;
+}
+
+#light .content {
+    box-shadow: 1px 1px 3px rgb(187, 187, 187);
+
+    background-color: white;
+}
+
+#light .header {
+    background-color: white;
+}
+
+#light .theme_icons {
+    background-color: #007bff;
+    color: white;
+}
+
+#light .seletor {
+    position: absolute;
+    justify-self: left;
+    color: rgb(231, 231, 231);
+    width: 30px;
+    height: 30px;
+    transform: translate(27px);
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+#light hr {
+    background-color: rgb(211, 211, 211);
+}
+
+#light .corpo {
+    background-color: rgb(255, 255, 255);
+}
+
+#light .senha_interacao_botao {
+    color: black;
+}
+
+#light .senha_interacao_botao:hover {
+    color: rgb(48, 145, 255);
+}
+
+#light .status_bar_externo {
+    background-color: rgb(224, 224, 224);
+}
+
+#light .status_bar_interno {
+    background-color: green;
+}
+
+#light .label {
+    color: gray;
+}
+
+#light .senha_tamanho::-webkit-slider-runnable-track {
+    background-color: rgb(224, 224, 224);
+}
+
+#light .senha_tamanho::-webkit-slider-thumb {
+    background-color: aqua;
+    box-shadow: 1px 1px 4px rgb(110, 110, 110);
+}
+
+#light .senha_tamanho:active::-webkit-slider-thumb,
+#light .senha_tamanho:hover::-webkit-slider-thumb {
+    border: 1px solid rgb(163, 163, 163);
+}
+
+#light .checkbox {
+    border: 2px solid rgb(100, 100, 100);
+}
+
+#light .checkbox:checked {
+    background-color: rgb(48, 145, 255);
+    border-color: rgb(48, 145, 255);
+}
+
+#light .checkbox:hover {
+    border-color: rgb(116, 181, 255);
+}
+
+#light .checkbox:checked~.check_icon {
+    color: white;
+}
+
+#light .show_copy {
+    background-color: #909090;
+    color: white;
+}
