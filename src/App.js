@@ -9,36 +9,42 @@ import { MdDarkMode } from "react-icons/md";
 import { BsFillSunFill } from "react-icons/bs";
 import { FaCircle } from "react-icons/fa";
 import { createContext } from 'react';
+// Contexto para o tema claro e escuro 
 const ThemeContext = createContext(null) 
 
 function App() {
+  // Estados utilizados durante toda a aplicação
+  /// Estados para Senhas
   const [Tamanho, setTamanho] = useState(4);
   const [Maiusculas, setMaiusculas] = useState(false);
   const [Minusculas, setMinusculas] = useState(false);
   const [Simbolos, setSimbolos] = useState(false);
   const [Senha, setSenha] = useState('');
   const [Status_bar, setStatus_bar] = useState('25%')
+  /// Display para a div copiado começa com falso
   const [Display, setDisplay] = useState(false)
+  /// Tema padrão claro
   const [Theme, setTheme] = useState('light')
 
-
-
-
+  // Gatilhos para gerar uma nova senha e novo status de segurança, todas são variáveis para geração de senha.
   useEffect(() => {
     setSenha(gerar_senha());
     largura_status_bar()
   }, [Tamanho, Maiusculas, Minusculas, Simbolos]);
 
   function gerar_senha() {
+    /// Variáveis para geração de senha, sendo a padrão incluindo apenas números.
     const letras_maiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     const letras_minusculas = 'abcdefghijklmnopqrstuvwxyz'
     const letras_simbolos = '!@#$%&?'
     let incluir = '0123456789'
     let senha = ''
+    /// Lógica para incluir ou não variáveis.
     if (Maiusculas) { incluir += letras_maiusculas }
     if (Minusculas) { incluir += letras_minusculas }
     if (Simbolos) { incluir += letras_simbolos }
-    let size = incluir.length
+    let size = incluir.length /// Range de caracteres que podem ser incluídos na senha.
+    /// Caractere é sorteado dentre os incluídos, acontece n vezes, sendo n == ${Tamanho}.
     for (let i = 1; i <= Tamanho; i++) {
       senha += incluir[Math.floor(Math.random() * size)]
     }
@@ -46,21 +52,27 @@ function App() {
   }
 
   function largura_status_bar() {
+    // Lógica para definir nível de segurança da senha
+    /// Caso tenha 20+ caracteres e todas variáveis incluidas.
     if (Tamanho >= 20 && Maiusculas && Minusculas && Simbolos) {
       setStatus_bar('100%')
     }
+    /// Caso tenha 12+ caracteres e ao menos uma variável de letras inclusa.
     else if (Tamanho >= 12 && (Maiusculas || Minusculas)) {
       setStatus_bar('75%')
     }
-    else if (Tamanho >= 7 && (!Maiusculas || !Minusculas)) {
+    /// Caso tenha 7+ caracteres.
+    else if (Tamanho >= 7 ) {
       setStatus_bar('50%')
     }
+    /// Caso tenha 6- caracteres.
     else if (Tamanho <= 6) {
       setStatus_bar('25%')
     }
   }
 
   function copiar() {
+    // Copia a senha para a área de transferência e mostra o alerta: "copiado" por 2 segundos.
     navigator.clipboard.writeText(Senha)
     setDisplay(true)
     setTimeout(() => {
@@ -68,6 +80,7 @@ function App() {
     }, 2000);
   }
 
+  // Função altera tema.
   const toggle_theme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"))
   }
@@ -90,13 +103,11 @@ function App() {
                   <h1 className='titulo'>
                     Gerador de Senhas
                   </h1>
-
                     <div onClick={toggle_theme} className='theme_icons '>
                       <FaCircle className='seletor '/>
                       <BsFillSunFill />
                       <MdDarkMode />
                     </div>
-    
                 </div>
               </div>
               <div className='descricao'>
