@@ -249,248 +249,30 @@ hr{
   opacity: 1;
 }
 @media screen and (min-width: 651px){
-.App{
-  width: 100%;
-  height: 100%;
-  background-color: rgb(236, 236, 236);
-  transition: background-color 0.4s ease;
-}
-.App *{
-  transition: background-color 0.4s ease, width 1s ease;
-}
+
 .container_content{
   padding: 3vh 15vw;
 }
-.content{
-  box-shadow: 1px 1px 3px rgb(187, 187, 187);
-  border-radius: 20px 20px 20px 20px;
-  padding: 10px;
-  background-color: white;
-}
-.header{
-  padding: 20px;
-  background-color: white;
-}
-.header_element{
-  text-align: center;
-}
-.header_title_theme{
-  display: block;
-  margin-bottom: 20px;
-}
-.titulo_theme_container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-select{
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-h1{
-  margin: 0;
-  max-width: 70%;
-  text-align: center;
-}
-.theme_icons{
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-  width: 70px;
-  height: 35px;
-  padding: 10px;
-  border-radius: 100px;
-  cursor: pointer;
-}
-.seletor{
-  position: absolute;
-  color: rgb(231, 231, 231);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid black;
-  transition: transform 0.6s ease;
-}
-.descricao{
-  font-size: 1.2em;
-}
-hr{
-  background-color: rgb(211, 211, 211);
-  width: 100%;
-  height: 2px;
-  display: block;
-}
-.corpo_container{
-  width: 100%;
-}
-.corpo{
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-}
+
+
+
+
 .senha_container{
-  width: 100%;
   padding-inline: 20px;
-  display: flex;
-  flex-direction: row;
 }
-.senha{
-  text-align: left;
-  width: 90%;
-}
+
 .senha > p{
   display: inline;
   max-width: 100%;
   font-size: clamp(12px, 2vw, 32px);
 }
-.senha_interacao{
-  display: inline-flex;
-  margin: auto;
-  text-align: right;
-  gap: 20px;
-}
+
 .senha_interacao_botao{
-  background-color: transparent;
-  cursor: pointer;
-}
-.senha_interacao_botao:hover{
-  color: rgb(48, 145, 255);
-}
-.senha_interacao_botao:active{
-  transform: scale(0.9);
-}
-.status_bar_container{
-  margin: 15px 0 20px 0;
-}
-.status_bar{
-  width: 100%;
-  height: 15px;
-  border-radius: 10px ;
-}
-.status_bar_externo{
-  background-color: rgb(224, 224, 224);
-}
-.status_bar_interno{
-  background-color: green;
-  width: 50%;
-}
-.senha_config{
-  padding: 20px;
-}
-.senha_config h2{
-  font-size: 2em;
+  font-size: 30px;
 }
 .config{
-  margin: 30px 0;
-  display: flex;
   flex-direction: row;
-  width: 100%;
 }
-.label{
-  display: block;
-  font-size: 1.2em;
-  color: gray;
-}
-/* */
-.senha_tamanho_container{
-  width: 100%;
-}
-.senha_tamanho{
-  margin-top: 20px;
-  cursor: pointer;
-  width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  background-color: transparent;
-  -webkit-appearance: none;
-  appearance: none;
-}
-.senha_tamanho::-webkit-slider-runnable-track{
-  height: 10px;
-  background-color: rgb(224, 224, 224);
-  border-radius: 5px;
-}
-.senha_tamanho::-webkit-slider-thumb{
-  background-color: aqua;
-  appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  margin-top: -6px;
-  box-shadow: 1px 1px 4px rgb(110, 110, 110);
-}
-.senha_tamanho:active::-webkit-slider-thumb
-, .senha_tamanho:hover::-webkit-slider-thumb
-{
-  border: 1px solid rgb(163, 163, 163);
-}
-  /* */
-.senha_caracteres_container{
-  display: flex;
-  margin-inline: 20px;
-  flex-direction: column;
-  text-align: center;
-}
-.checkbox_container{
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-}
-.checkbox_option{
-  display: flex;
-  flex-direction: row;
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-.label_checkbox{
-  display: flex;
-  position: relative;
-  cursor: pointer;
-}
-.checkbox{
-  
-  margin-inline: 5px;
-  width: 20px;
-  cursor: pointer;
-  appearance: none;
-  border: 2px solid rgb(100, 100, 100);
-}
-.checkbox:checked{
-  background-color: rgb(48, 145, 255);
-  border-color: rgb(48, 145, 255);
-}
-.checkbox:hover{
-  border-color: rgb(116, 181, 255);
-}
-.check_icon{
-  display: none;
-  position: absolute;
-  left: 10px;
-}
-.checkbox:checked ~ .check_icon{
-  display: inline;
-  color: white;
-}
-.show_container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.show_copy{
-  display: inline-block;
-  background-color: #909090;
-  color: white;
-  text-align: center;
-  padding: 30px 50px;
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-}
-.show_copy_visivel{
-  opacity: 1;
-}
+
+
 }
