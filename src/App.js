@@ -127,10 +127,10 @@ function App() {
                   </div>
                   <div className='senha_interacao'>
                     <button className='senha_interacao_botao' onClick={copiar}>
-                      <MdOutlineContentCopy size={30} />
+                      <MdOutlineContentCopy  />
                     </button>
                     <button className='senha_interacao_botao' onClick={() => setSenha(gerar_senha)}>
-                      <GrPowerReset size={30} />
+                      <GrPowerReset  />
                     </button>
                   </div>
                 </div>

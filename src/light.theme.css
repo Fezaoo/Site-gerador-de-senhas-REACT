@@ -24,7 +24,7 @@
     color: rgb(231, 231, 231);
     width: 30px;
     height: 30px;
-    transform: translate(27px);
+    transform: translate(18px);
     border-radius: 50%;
     border: 1px solid black;
 }
@@ -91,4 +91,9 @@
 #light .show_copy {
     background-color: #909090;
     color: white;
+}
+@media screen and (min-width: 650px){
+    #light .seletor {
+        transform: translate(27px);
+    }
 }
