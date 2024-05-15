@@ -21,14 +21,7 @@
 }
 
 #dark .seletor {
-    position: absolute;
-    justify-self: left;
-    color: rgb(231, 231, 231);
-    width: 30px;
-    height: 30px;
     transform: translate(-5px);
-    border-radius: 50%;
-    border: 1px solid black;
 }
 
 #dark hr {

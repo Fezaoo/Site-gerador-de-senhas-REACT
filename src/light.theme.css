@@ -5,7 +5,6 @@
 
 #light .content {
     box-shadow: 1px 1px 3px rgb(187, 187, 187);
-
     background-color: white;
 }
 
@@ -19,14 +18,7 @@
 }
 
 #light .seletor {
-    position: absolute;
-    justify-self: left;
-    color: rgb(231, 231, 231);
-    width: 30px;
-    height: 30px;
-    transform: translate(70%);
-    border-radius: 50%;
-    border: 1px solid black;
+    transform: translate(80%);
 }
 
 #light hr {
@@ -94,6 +86,6 @@
 }
 @media screen and (min-width: 650px){
     #light .seletor {
-        transform: translate(27px);
+        transform: translate(25px);
     }
 }
