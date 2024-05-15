@@ -96,7 +96,7 @@ function App() {
                 <div className='titulo_theme_container'>
                   <div className='language_container'>
                     <select className='language'>
-                      <option>Portugues</option>
+                      <option>Português</option>
                       <option>Inglês</option>
                     </select>
                   </div>
